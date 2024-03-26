@@ -12,3 +12,12 @@ const {x, y} = useMousePosition();
     </div>
 </template>
 
+<!-- 
+Les composables permettent de factoriser BEAUCOUP de code en intéragissant avec la réactivité de Vue.Js (onBeforeMount)
+
+-- VUE USE FAIT TOUT CA : A INSTALLER npm i @vueuse/core--
+
+1. Créer un dossier composables.
+2. Ajouter des composables de façon: use[EVENEMENT].js.
+
+ -->
