@@ -8,14 +8,16 @@ export function useEventListener(target, name, callback){
     // ===> toValue(target);
     // si variable normale: renvoie la variable normale sinon renvoie la valeur de la ref
     
-    const stopWatch = watch(()=>{
+    let listenerCreated = false;
+
+    stopWatch = watch(()=>{
         toValue(target), (targetResult)=>{
-            // si targetResult existe
-            if (targetResult){
+            // si listener pas créé et targetResult existe
+            if (!listenerCreated && targetResult){
                 targetResult.addEventListener(name, callback);
                 
                 // on arrête
-                stopWatch();
+                listenerCreated = true;
             }
         },{
             immediate:true

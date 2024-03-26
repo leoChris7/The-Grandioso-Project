@@ -1,5 +1,5 @@
 <script setup>
-import { onBeforeUnmount, ref, watch, watchEffect } from 'vue';
+import { Teleport, onBeforeUnmount, ref, watch, watchEffect } from 'vue';
 import ListItem from './components/ListItem.vue';
 import Composables from './components/Composables.vue';
 
@@ -32,11 +32,12 @@ onBeforeUnmount(()=>{
   stopWatch();
 });
 
-
+<Teleport to="#IDDELELEMENTQUONVAACCEDER"></Teleport>
 
 </script>
 
 <template>
+  <Modal>Test</Modal>
   <Composables></Composables>
   <div ref="testDiv">Je suis une div magique.<p>3, 2, 1, LET'S A GO!! SPAGHETTIS</p></div>
   <ul>
@@ -46,6 +47,7 @@ onBeforeUnmount(()=>{
 </template>
 
 <style scoped>
+
 
 </style>
 
